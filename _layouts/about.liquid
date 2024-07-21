@@ -43,6 +43,14 @@ layout: default
     <!-- News -->
     {% if page.news and site.announcements.enabled %}
       <h2>
+        <a href="{{ '/teaching/' | relative_url }}" style="color: inherit">teaching</a>
+      </h2>
+      {% include teaching.liquid limit=false %}
+    {% endif %}
+
+    <!-- News -->
+    {% if page.news and site.announcements.enabled %}
+      <h2>
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
       </h2>
       {% include news.liquid limit=true %}
