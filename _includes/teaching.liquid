@@ -1,12 +1,16 @@
 <div class="teaching">
-  {% assign teaching_entries = site.teaching | sort: 'semester' | reverse %}
-  <ul class="cv-list">
+  <table class="table">
+    {% assign teaching_entries = site.teaching | sort: 'semester' | reverse %}
     {% for entry in teaching_entries %}
-      <li>
-        <strong>{{ entry.semester }} {{ entry.course_code }}</strong> - {{ entry.course_name }}
-        <br>
-        {{ entry.description }}
-      </li>
+      <tr>
+        <td>{{ entry.semester }} {{ entry.course_code }}</td>
+        <td>
+          <strong>{{ entry.course_name }}</strong>
+          <ul>
+            <li>{{ entry.description }}</li>
+          </ul>
+        </td>
+      </tr>
     {% endfor %}
-  </ul>
+  </table>
 </div>
