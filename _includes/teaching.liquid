@@ -1,11 +1,11 @@
-<div class="teaching">
-  <table class="table">
+<div class="news">
+  <table class="table table-sm table-borderless">
     {% assign teaching_entries = site.teaching | sort: 'semester' | reverse %}
     {% for entry in teaching_entries %}
       <tr>
-        <td>{{ entry.semester }} {{ entry.course_code }}</td>
+        <th scope="row">{{ entry.semester }}</th>
         <td>
-          <strong>{{ entry.course_name }}</strong>
+          <strong>{{ entry.course_code }} {{ entry.course_name }}</strong>
           <ul>
             <li>{{ entry.description }}</li>
           </ul>
